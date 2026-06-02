@@ -26,15 +26,14 @@
     --radius: 0.5rem;
   }
 
-  * {
-    @apply border-border;
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  body {
-    @apply bg-sky-50 text-foreground font-sans antialiased;
-    min-height: 100vh;
-  }
+body {
+  @apply bg-sky-50 text-gray-900 font-sans antialiased;
+  min-height: 100vh;
+}
 
   html {
     scroll-behavior: smooth;
