@@ -98,8 +98,7 @@ const NetworkDataPage = ({ network }: NetworkPageProps) => {
             <p className="text-sm text-gray-500 mb-5">{products.length} bundle{products.length !== 1 ? 's' : ''} available</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {products.map((p, i) => (
-                <ProductCard key={p.id} product={p} onSelect={setSelectedProduct} index={i} />
-              ))}
+                <ProductCard key={p._id} product={p} onSelect={setSelectedProduct} index={i} />              ))}
             </div>
           </>
         )}

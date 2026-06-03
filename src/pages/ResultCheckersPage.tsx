@@ -62,8 +62,7 @@ const ResultCheckersPage = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
             {products.map((p, i) => (
-              <ProductCard key={p.id} product={p} onSelect={setSelectedProduct} index={i} />
-            ))}
+                <ProductCard key={p._id} product={p} onSelect={setSelectedProduct} index={i} />            ))}
           </div>
         )}
 
