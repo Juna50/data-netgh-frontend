@@ -4,7 +4,8 @@ export type OrderStatus = 'pending' | 'processing' | 'completed' | 'failed' | 'c
 export type CheckerNetwork = 'WASSCE' | 'BECE';
 
 export interface Product {
-  id: string;
+  _id?: string;
+  id?: string;
   product_type: ProductType;
   network: string;
   name: string;
