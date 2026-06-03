@@ -70,7 +70,7 @@ const AdminProducts = () => {
     try {
       const payload = { ...form, price: parseFloat(form.price) };
       if (editProduct) {
-        await api.patch(`/products/${editProduct.id}`, payload);
+        await api.patch(`/products/${editProduct._id}`, payload);
         toast.success('Product updated');
       } else {
         await api.post('/products', payload);
@@ -87,8 +87,8 @@ const AdminProducts = () => {
 
   const toggleActive = async (product: Product) => {
     try {
-      await api.patch(`/products/${product.id}`, { is_active: !product.is_active });
-      setProducts((prev) => prev.map((p) => p.id === product.id ? { ...p, is_active: !p.is_active } : p));
+      await api.patch(`/products/${product._id}`, { is_active: !product.is_active });
+      setProducts((prev) => prev.map((p) => p._id === product._id ? { ...p, is_active: !p.is_active } : p));
       toast.success(`Product ${!product.is_active ? 'enabled' : 'disabled'}`);
     } catch {
       toast.error('Failed to update product');
@@ -99,7 +99,7 @@ const AdminProducts = () => {
     if (!confirm('Delete this product? This cannot be undone.')) return;
     try {
       await api.delete(`/products/${id}`);
-      setProducts((prev) => prev.filter((p) => p.id !== id));
+      setProducts((prev) => prev.filter((p) => p._id !== id));
       toast.success('Product deleted');
     } catch {
       toast.error('Failed to delete product');
@@ -165,7 +165,7 @@ const AdminProducts = () => {
                 <tr><td colSpan={8} className="text-center py-10 text-gray-400">No products found</td></tr>
               ) : (
                 filteredProducts.map((product) => (
-                  <tr key={product.id} className="hover:bg-sky-50/40 transition-colors">
+                  <tr key={product._id} className="hover:bg-sky-50/40 transition-colors">
                     <td className="px-4 py-3 font-medium text-gray-900">{product.name}</td>
                     <td className="px-4 py-3 text-xs font-semibold text-gray-600 uppercase">{product.network}</td>
                     <td className="px-4 py-3 text-xs text-gray-500">{product.product_type.replace('_', ' ')}</td>
@@ -185,7 +185,7 @@ const AdminProducts = () => {
                         <button onClick={() => openEdit(product)} className="p-1.5 hover:bg-sky-50 rounded-lg text-sky-600 transition-colors">
                           <Pencil className="w-3.5 h-3.5" />
                         </button>
-                        <button onClick={() => handleDelete(product.id)} className="p-1.5 hover:bg-red-50 rounded-lg text-red-500 transition-colors">
+                        <button onClick={() => handleDelete(product._id)} className="p-1.5 hover:bg-red-50 rounded-lg text-red-500 transition-colors">
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
