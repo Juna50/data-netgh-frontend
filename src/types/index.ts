@@ -64,8 +64,7 @@ export interface OrderStatusResponse {
     size: string;
   };
 
-  network: string;
-}
+  payment_network: string;}
 
 export interface CheckoutPayload {
   product_id: string;
