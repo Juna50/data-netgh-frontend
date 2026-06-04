@@ -35,8 +35,8 @@ export interface Order {
   delivery_reference: string | null;
   customer_email: string | null;
   notes: string | null;
-  created_at: string;
-  updated_at: string;
+  createdAt: string;
+  updatedAt: string;
   product_name?: string;
   product_network?: string;
 }
