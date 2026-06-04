@@ -50,9 +50,21 @@ export interface OrderStatusResponse {
   amount: number;
   recipient_number: string;
   createdAt: string;
-  product_name: string;
+
+  product_id: {
+    _id: string;
+    name: string;
+    network: string;
+    size: string;
+  };
+
+  product_snapshot?: {
+    name: string;
+    network: string;
+    size: string;
+  };
+
   network: string;
-  size: string;
 }
 
 export interface CheckoutPayload {
