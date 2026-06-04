@@ -118,7 +118,7 @@ const AdminOrders = () => {
                     className="hover:bg-sky-50/50 transition-colors"
                   >
                     <td className="px-4 py-3 font-mono text-xs font-bold text-gray-900">{order.order_number}</td>
-                    <td className="px-4 py-3 text-gray-600 max-w-[140px] truncate">{(order as any).product_name || 'N/A'}</td>
+                    <td className="px-4 py-3 text-gray-600 max-w-[140px] truncate">{(order as any).product_id.name || 'N/A'}</td>
                     <td className="px-4 py-3 font-mono text-xs text-gray-600">{order.recipient_number}</td>
                     <td className="px-4 py-3 font-mono text-xs text-gray-600">{order.payment_number}</td>
                     <td className="px-4 py-3 text-xs text-gray-600 uppercase">{order.payment_network}</td>
