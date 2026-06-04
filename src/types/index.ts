@@ -50,7 +50,7 @@ export interface OrderStatusResponse {
   amount: number;
   recipient_number: string;
   createdAt: string;
-  product_name: string;
+   product_snapshot: string;
   network: string;
   size: string;
 }
