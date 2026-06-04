@@ -64,7 +64,7 @@ const TrackOrderPage = () => {
       handleTrack(id);
     }
   }, []);
-
+console.log(order);
   return (
     <MainLayout>
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
