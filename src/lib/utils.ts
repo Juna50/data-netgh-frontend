@@ -13,17 +13,29 @@ export const formatCurrency = (amount: number): string => {
     minimumFractionDigits: 2,
   }).format(amount);
 };
+export const safeDate = (d?: string | null) =>
+  d && !isNaN(new Date(d).getTime()) ? new Date(d) : null;
+// export const formatDate = (dateString: string): string => {
+//   return new Intl.DateTimeFormat('en-GH', {
+//     year: 'numeric',
+//     month: 'short',
+//     day: 'numeric',
+//     hour: '2-digit',
+//     minute: '2-digit',
+//   }).format(new Date(dateString));
+// };
+export const formatDate = (dateString?: string | null): string => {
+  const date = safeDate(dateString);
+  if (!date) return 'N/A';
 
-export const formatDate = (dateString: string): string => {
   return new Intl.DateTimeFormat('en-GH', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
-  }).format(new Date(dateString));
+  }).format(date);
 };
-
 export const isValidGhanaPhone = (phone: string): boolean => {
   return /^0[0-9]{9}$/.test(phone);
 };

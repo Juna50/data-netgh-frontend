@@ -4,7 +4,8 @@ export type OrderStatus = 'pending' | 'processing' | 'completed' | 'failed' | 'c
 export type CheckerNetwork = 'WASSCE' | 'BECE';
 
 export interface Product {
-  _id: string;
+  _id?: string;
+  id?: string;
   product_type: ProductType;
   network: string;
   name: string;
@@ -49,7 +50,7 @@ export interface OrderStatusResponse {
   delivery_status: string;
   amount: number;
   recipient_number: string;
-  created_at: string;
+  createdAt: string;
   product_name: string;
   network: string;
   size: string;
