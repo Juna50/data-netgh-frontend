@@ -161,7 +161,7 @@ console.log(order);
  {
   label: "Product",
   value: order.product_id?.name ?? order.product_snapshot?.name,
-},                    { label: "Network", value: order.payment_network?.toUpperCase() },
+},                    { label: "Network", value: order.product_snapshot?.network?.toUpperCase() },
                     { label: "Size", value: order.product_snapshot?.size },
                     {
                       label: "Amount Paid",
