@@ -158,7 +158,7 @@ const TrackOrderPage = () => {
                       value: order.order_number,
                       mono: true,
                     },
-                     { label: "Product", value: order.product_snapshot},
+                    { label: "Product", value: order.product_name },
                     { label: "Network", value: order.network?.toUpperCase() },
                     { label: "Size", value: order.size },
                     {
