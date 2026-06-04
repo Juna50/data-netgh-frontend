@@ -139,8 +139,7 @@ const AdminDashboard = () => {
                         {order.status}
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-gray-400 text-xs whitespace-nowrap">{formatDate(order.created_at)}</td>
-                  </motion.tr>
+<td className="px-4 py-3 text-gray-400 text-xs whitespace-nowrap">{formatDate(order.createdAt)}</td>                  </motion.tr>
                 ))
               )}
             </tbody>
